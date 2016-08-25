@@ -23,7 +23,11 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-           <!--  nav here -->
+            <% if current_user %>
+              <%= link_to "Hello #{current_user.name}!", user_path(current_user) %>
+              <%= link_to "Attractions", attractions_path %>
+              <%= link_to "Log Out", session_path(current_user.id), method: :delete %>
+            <% end %>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

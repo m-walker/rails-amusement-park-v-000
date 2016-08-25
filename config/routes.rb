@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
 
+  resources :attractions, only: [:index, :show]
+
   resources :users, only: [:new, :create, :show, :edit, :update]
 
-  resources :sessions, only: [:new, :create]
+  resources :sessions, only: [:create, :destroy]
   
-  get 'sessions/new', to: 'sessions#new', as: 'signin'
+  get 'signin', to: 'sessions#new'
 
   root to: 'welcome#home'
 end

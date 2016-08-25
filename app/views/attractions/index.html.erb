@@ -1,0 +1,14 @@
+<h1>Listing Attraction</h1>
+<table>
+  <th>Picture</th>  
+  <th>Name</th>  
+  <th>Tickets</th>  
+  <th>Details</th>  
+    <% @attractions.each do |attraction| %>
+      <tr>
+        <td></td>
+        <td>attraction.name</td>
+        <td>attraction.tickets</td>
+      </tr>
+    <% end %>
+</table>

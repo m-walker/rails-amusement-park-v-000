@@ -33,9 +33,7 @@ DATA = {
 }
 
 def main
-  make_users
   make_admin
-  make_attractions_and_rides
 end
 
 def make_users

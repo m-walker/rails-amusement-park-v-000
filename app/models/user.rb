@@ -5,6 +5,9 @@ class User < ActiveRecord::Base
   validates_presence_of :name, :password
 
   def mood
-    self.nausea > self.happiness ? "sad" : "happy"
+    if self.happiness && self.nausea
+      self.nausea > self.happiness ? "sad" : "happy"
+    end
   end
+  
 end
