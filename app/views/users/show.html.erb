@@ -3,6 +3,8 @@
   <p><strong>ADMIN</strong></p>
 <% end %>
 
+<%= flash[:notice] %><br>
+
 Name: <%= @user.name %><br>
 Tickets: <%= @user.tickets %><br>
 Mood: <%= @user.mood %><br>

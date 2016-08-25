@@ -1,2 +1,19 @@
-<h1>Attractions#show</h1>
-<p>Find me in app/views/attractions/show.html.erb</p>
+Name <%= @attraction.name %><br>
+Total Number of Users<br>
+Ticket Requirement <%= @attraction.tickets %><br>
+Height Requirement <%= @attraction.min_height %><br>
+Nausea Rating <%= @attraction.nausea_rating %><br>
+Happiness Rating <%= @attraction.happiness_rating %><br>
+
+<% if !current_user.admin %>
+  <%= form_tag url_for(controller: 'rides', action: 'create'), method: 'post' do %>
+    <%= hidden_field_tag 'attraction_id', params[:id] %>
+    <%= submit_tag "Go on this ride" %>
+  <% end %>
+  <%= link_to "Back", attractions_path %>
+<% end %>
+
+<% if current_user.admin %>
+  <%= link_to "Edit Attraction", edit_attraction_path(Attraction.find(params[:id])) %><br>
+  <%= link_to "Back", attractions_path %>
+<% end %>

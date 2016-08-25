@@ -13,7 +13,7 @@ class Ride < ActiveRecord::Base
       not_tall_enough_msg
     else
       user.update(:tickets => (user.tickets - attraction.tickets), :nausea => (user.nausea + attraction.nausea_rating), :happiness => (user.happiness + attraction.happiness_rating))
-      "Thank you for riding #{attraction.name}"
+      "Thanks for riding the #{attraction.name}!"
     end
   end
 
